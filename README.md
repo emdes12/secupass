@@ -1,2 +1,2 @@
 # secupass
-a project for  a password managing /security website http://securpass.netlify.app
+a project for  a password managing /security website http://secupass.netlify.app

@@ -1,0 +1,458 @@
+//varibles here
+$red_color: #ff0000;
+$dip_blue: #000066;
+$grey_color: #e4e3e3;
+$white_color: #ffffff;
+$black_color: #000000;
+$light_blue_color: #747497;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+//mixing(reused) stlye here
+@mixin flex($alIt, $jsCt) {
+  display: flex;
+  align-items: $alIt;
+  justify-content: $jsCt;
+}
+
+@mixin paddings($top, $right, $btm, $left) {
+  padding: $top $right $btm $left;
+}
+
+@mixin buttons($bgcolor) {
+  border: none;
+  padding: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  @include paddings(17px, 18.3px, 17px, 18.3px);
+  font-family: Montserrat;
+  background-color: $bgcolor;
+  font-weight: bold;
+  color: $white_color;
+}
+
+//other styling
+body {
+  background-color: $white_color;
+  font-family: Montserrat;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin-top: 100px;
+}
+
+header {
+  @include flex(center, space-between);
+  @include paddings(0, 50px, 0, 50px);
+  background-color: $grey_color;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .logo {
+    @include flex(center, center);
+    font-size: 25px;
+
+    .red-logo {
+      color: $red_color;
+      font-weight: bold;
+    }
+
+    .blue-logo {
+      color: $dip_blue;
+    }
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      @include flex(center, space-between);
+
+      a {
+        text-decoration: none;
+        color: $light_blue_color;
+        transition: all 1s ease;
+        @include paddings(17px, 13.6px, 17px, 13.6px);
+
+        &.opened {
+          border-top: 2px solid $dip_blue;
+          color: $dip_blue;
+        }
+
+        &:hover,
+        &:hover {
+          background-color: $dip_blue;
+          color: $white_color;
+        }
+      }
+    }
+  }
+}
+
+.top-btns {
+  .btn-red {
+    @include buttons($red_color);
+  }
+
+  .btn-blue {
+    @include buttons($dip_blue);
+  }
+
+  @include flex(center, center);
+}
+
+.main {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px;
+  width: 100%;
+  gap: 70.5px;
+
+  .view-demo,
+  .banner {
+    @include flex(center, center);
+    overflow: hidden;
+    flex-direction: column;
+    @include paddings(50px, 50px, 50px, 50px);
+    height: 537px;
+    border-radius: 16.5px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .view-demo {
+    background-color: $grey_color;
+    flex: 1;
+    @include paddings(70px, 70px, 70px, 70px);
+    @include flex(center, space-between);
+    gap: 15px;
+    box-shadow: 10px 10px 25px -10px $black_color;
+
+    div {
+      width: 100%;
+    }
+
+    .password-info {
+      background-color: $white_color;
+      @include paddings(12px, 12px, 12px, 12px);
+      border-bottom: 5px solid $dip_blue;
+      @include flex(center, space-between);
+      font-size: 25px;
+      gap: 9px;
+
+      #display-genpass {
+        font-weight: bold;
+        width: 380px;
+        border: none;
+        font-size: inherit;
+      }
+    }
+
+    .custome-bar {
+      flex: 1;
+      background-color: $white_color;
+      padding: 10px 0;
+
+      h3 {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .inputpart {
+        padding: 50px 20px;
+        @include flex(center, center);
+        gap: 5px;
+
+        .inp-num {
+          border: none;
+          width: 90px;
+          font-size: 25px;
+          font-weight: bold;
+        }
+
+        .inp-range {
+          -webkit-appearance: none;
+          flex: 1;
+          height: 10px;
+          border-radius: 5px;
+          background: $grey_color;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: 0.2s;
+          transition: opacity 0.2s;
+        }
+
+        .inp-range:hover {
+          opacity: 1;
+        }
+
+        .inp-range::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          background: $red_color;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        .inp-range::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background: $red_color;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+
+      .charact-set {
+        @include paddings(12px, 12px, 12px, 12px);
+        @include flex(center, space-around);
+        // background-color: red;
+        gap: 15px;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        label {
+          width: 48%;
+          @include flex(center, flex-start);
+          @include paddings(0px, 20px, 0px, 35px);
+        }
+      }
+    }
+  }
+
+  .banner {
+    display: none;
+    transition: all 2s ease;
+  }
+
+  .banner.show {
+    display: flex;
+  }
+
+  .banner.ca-text {
+    background-color: $red_color;
+    flex: 1;
+    text-align: center;
+    box-shadow: -10px 10px 25px -10px $black_color;
+
+    img {
+      width: 150px;
+      padding-bottom: 20px;
+    }
+
+    h2 {
+      padding-bottom: 30px;
+      font-size: 50px;
+      color: $white_color;
+    }
+
+    .line {
+      margin-bottom: 20px;
+      border: 0.7px solid $white_color;
+      width: 100%;
+      content: "";
+    }
+
+    p {
+      font-size: 24px;
+      color: $dip_blue;
+    }
+  }
+
+  .banner.ads {
+    background-color: $white_color;
+    flex: 1;
+  }
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.store-password {
+  width: 100%;
+  z-index: 9999999999;
+  height: 100vh;
+  transform: scale(0);
+  transition: transform 2s ease-in;
+  @include flex(center, center);
+  display: none;
+  background-color: #00000085;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+
+  .store-form {
+    background-color: $white_color;
+    width: 400px;
+    height: 400px;
+    padding: 50px;
+    @include flex(center, space-between);
+    flex-direction: column;
+    border-radius: 30px;
+
+    input {
+      @include buttons($light_blue_color);
+      width: 100%;
+      margin: 0;
+      cursor: auto;
+    }
+
+    button {
+      @include buttons($red_color);
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  .close-form {
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: $light_blue_color;
+    @include flex(center, center);
+    color: $red_color;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+  }
+}
+
+/* styled stored pass */
+.stored-pass {
+  @include flex(center, center);
+  width: 100%;
+  height: 600px;
+  padding: 80px;
+  background-color: $light_blue_color;
+  position: relative;
+
+  span {
+    content: "Your Password";
+    color: transparent;
+    -webkit-text-stroke: 5px solid $white_color;
+    -webkit-text-stroke-color: $white_color;
+    -webkit-text-stroke-width: 1px;
+    opacity: 0.2;
+    font-size: 30px;
+    font-weight: 700;
+    z-index: 0;
+    position: absolute;
+    text-align: center;
+    top: 35px;
+    left: 0%;
+    width: 100%;
+    transform: translate(-1%, 42%);
+  }
+
+  .st-head {
+    color: $white_color;
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    top: 50px;
+    left: 0%;
+    width: 100%;
+    transform: translate(-1%, 42%);
+  }
+
+  .stored {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    @include flex(center, "");
+    flex-direction: column;
+    background-color: $dip_blue;
+    width: 450px;
+    height: 420px;
+    overflow-x: auto;
+
+    .stored-list {
+      background-color: $white_color;
+      width: 100%;
+      height: 100px;
+      border-radius: 10px;
+      margin: 5px;
+      padding: 10px;
+      @include flex(center, space-between);
+
+      .saved-info {
+        width: 250px;
+        display: flex;
+        padding: 10px;
+        color: $black_color;
+        flex-direction: column;
+        gap: 10px;
+
+        .hide-pass {
+          font-size: 10px;
+        }
+
+        .show-pass {
+          font-size: 15px;
+          display: none;
+        }
+
+        &.show .hide-pass {
+          display: none;
+        }
+
+        &.show .show-pass {
+          display: block;
+        }
+      }
+
+      .hide-show {
+        font-size: 20px;
+        padding: 5px;
+
+        .fa-eye-slash {
+          display: none;
+        }
+
+        &.show .fa-eye {
+          display: none;
+        }
+
+        &.show .fa-eye-slash {
+          display: block;
+        }
+      }
+
+      .modify-cent {
+        width: 100px;
+        font-size: 20px;
+        @include flex(center, center);
+        gap: 5px;
+      }
+    }
+  }
+}
+
+/* media screen */
+
+@media only screen and (max-width: 1220px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}

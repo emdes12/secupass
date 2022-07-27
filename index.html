@@ -51,16 +51,18 @@
       <div class="view-demo" id="view-demo">
         <div class="password-info">
           <input type="text" value="Dc12@x&yuEuw" id="display-genpass" />
-          <i
-            class="fa fa-clone"
-            onclick="copyPassword()"
-            aria-hidden="true"
-          ></i>
-          <i
-            class="fa fa-refresh"
-            aria-hidden="true"
-            onclick="reloadPass()"
-          ></i>
+          <div class="rencop">
+            <i
+              class="fa fa-clone"
+              onclick="copyPassword()"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fa fa-refresh"
+              aria-hidden="true"
+              onclick="reloadPass()"
+            ></i>
+          </div>
         </div>
 
         <div class="custome-bar">
@@ -177,115 +179,7 @@
     <div class="stored-pass">
       <span>YOUR PASSWORDS</span>
       <h3 class="st-head">Your Passwords</h3>
-      <ul class="stored">
-        <li class="stored-list">
-          <div class="saved-info">
-            <h3>Facebook</h3>
-            <p class="hide-pass">
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-            </p>
-            <p class="show-pass">D*1l0vak</p>
-          </div>
-
-          <div
-            class="hide-show"
-            onclick="hideShow(this)"
-            title="show/hide password"
-          >
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <i class="fa fa-eye-slash" aria-hidden="true"></i>
-          </div>
-
-          <div class="modify-cent">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-            <i
-              class="fa fa-clone"
-              onclick="copySavePass('D*1l0vak')"
-              aria-hidden="true"
-            ></i>
-          </div>
-        </li>
-
-        <li class="stored-list">
-          <div class="saved-info">
-            <h3>Twitter</h3>
-            <p class="hide-pass">
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-            </p>
-            <p class="show-pass">D*1l0vak</p>
-          </div>
-
-          <div
-            class="hide-show"
-            onclick="hideShow(this)"
-            title="show/hide password"
-          >
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <i class="fa fa-eye-slash" aria-hidden="true"></i>
-          </div>
-
-          <div class="modify-cent">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-            <i
-              class="fa fa-clone"
-              onclick="copySavePass('D*1l0vak')"
-              aria-hidden="true"
-            ></i>
-          </div>
-        </li>
-
-        <li class="stored-list">
-          <div class="saved-info">
-            <h3>Github</h3>
-            <p class="hide-pass">
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-              <i class="fa fa-circle" aria-hidden="true"></i>
-            </p>
-            <p class="show-pass">D*1l0vak</p>
-          </div>
-
-          <div
-            class="hide-show"
-            onclick="hideShow(this)"
-            title="show/hide password"
-          >
-            <i class="fa fa-eye" aria-hidden="true"></i>
-            <i class="fa fa-eye-slash" aria-hidden="true"></i>
-          </div>
-
-          <div class="modify-cent">
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            <i class="fa fa-trash" aria-hidden="true"></i>
-            <i
-              class="fa fa-clone"
-              onclick="copySavePass('D*1l0vak')"
-              aria-hidden="true"
-            ></i>
-          </div>
-        </li>
-      </ul>
+      <ul class="stored"></ul>
     </div>
 
     <script src="/script.js"></script>

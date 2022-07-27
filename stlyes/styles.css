@@ -134,12 +134,18 @@ header nav ul a:hover, header nav ul a:hover {
   align-items: center;
   justify-content: space-between;
   font-size: 25px;
-  gap: 9px;
 }
 .main .view-demo .password-info #display-genpass {
   font-weight: bold;
+  flex: 1;
   border: none;
   font-size: inherit;
+}
+.main .view-demo .password-info .rencop {
+  max-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .main .view-demo .custome-bar {
   flex: 1;

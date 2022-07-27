@@ -1,0 +1,432 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: Montserrat;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  margin-top: 100px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 50px;
+  background-color: #e4e3e3;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+header .logo .red-logo {
+  color: #ff0000;
+  font-weight: bold;
+}
+header .logo .blue-logo {
+  color: #000066;
+}
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav ul a {
+  text-decoration: none;
+  color: #747497;
+  transition: all 1s ease;
+  padding: 17px 13.6px 17px 13.6px;
+}
+header nav ul a.opened {
+  border-top: 2px solid #000066;
+  color: #000066;
+}
+header nav ul a:hover, header nav ul a:hover {
+  background-color: #000066;
+  color: #ffffff;
+}
+
+.top-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-btns .btn-red {
+  border: none;
+  padding: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 17px 18.3px 17px 18.3px;
+  font-family: Montserrat;
+  background-color: #ff0000;
+  font-weight: bold;
+  color: #ffffff;
+}
+.top-btns .btn-blue {
+  border: none;
+  padding: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 17px 18.3px 17px 18.3px;
+  font-family: Montserrat;
+  background-color: #000066;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.main {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  width: 100%;
+  gap: 70.5px;
+}
+.main .view-demo,
+.main .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 16.5px;
+}
+.main .view-demo img,
+.main .banner img {
+  width: 100%;
+}
+.main .view-demo {
+  background-color: #e4e3e3;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-shadow: 3px 3px 19px -10px #000000;
+}
+.main .view-demo div {
+  width: 100%;
+}
+.main .view-demo .password-info {
+  background-color: #ffffff;
+  padding: 12px 12px 12px 12px;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 5px solid #000066;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+  gap: 9px;
+}
+.main .view-demo .password-info #display-genpass {
+  font-weight: bold;
+  border: none;
+  font-size: inherit;
+}
+.main .view-demo .custome-bar {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 10px 0;
+}
+.main .view-demo .custome-bar h3 {
+  text-align: center;
+  font-size: 25px;
+}
+.main .view-demo .custome-bar .inputpart {
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.main .view-demo .custome-bar .inputpart .inp-num {
+  border: none;
+  width: 60px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.main .view-demo .custome-bar .inputpart .inp-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: #e4e3e3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.main .view-demo .custome-bar .inputpart .inp-range:hover {
+  opacity: 1;
+}
+.main .view-demo .custome-bar .inputpart .inp-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main .view-demo .custome-bar .inputpart .inp-range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #ff0000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main .view-demo .custome-bar .charact-set {
+  padding: 12px 12px 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.main .view-demo .custome-bar .charact-set label {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 20px 0px 35px;
+}
+.main .banner {
+  display: none;
+  transition: all 2s ease;
+  padding: 10px;
+}
+.main .banner.show {
+  display: block;
+}
+.main .banner.ca-text {
+  text-align: center;
+}
+.main .banner.ca-text img {
+  width: 150px;
+  padding-bottom: 20px;
+}
+.main .banner.ca-text h2 {
+  padding-bottom: 30px;
+  font-size: 30px;
+  color: #ff0000;
+}
+.main .banner.ca-text .line {
+  margin-bottom: 20px;
+  border: 0.7px solid #000000;
+  width: 100%;
+  content: "";
+}
+.main .banner.ca-text p {
+  font-size: 18px;
+  color: #000066;
+}
+
+.fa {
+  cursor: pointer;
+}
+
+.store-password {
+  width: 100%;
+  z-index: 9999999999;
+  height: 100vh;
+  transform: scale(0);
+  transition: transform 2s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5215686275);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.store-password .store-form {
+  background-color: #ffffff;
+  width: 400px;
+  height: 400px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.store-password .store-form input {
+  border: none;
+  padding: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 17px 18.3px 17px 18.3px;
+  font-family: Montserrat;
+  background-color: #747497;
+  font-weight: bold;
+  color: #ffffff;
+  width: 100%;
+  margin: 0;
+  cursor: auto;
+}
+.store-password .store-form button {
+  border: none;
+  padding: 17px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 17px 18.3px 17px 18.3px;
+  font-family: Montserrat;
+  background-color: #ff0000;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  width: 100%;
+}
+.store-password .close-form {
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #747497;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff0000;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+
+/* styled stored pass */
+.stored-pass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
+  padding: 30px;
+  background-color: #747497;
+  position: relative;
+}
+.stored-pass span {
+  content: "Your Password";
+  color: transparent;
+  -webkit-text-stroke: 5px solid #ffffff;
+  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-stroke-width: 1px;
+  opacity: 0.2;
+  font-size: 30px;
+  font-weight: 700;
+  z-index: 0;
+  position: absolute;
+  text-align: center;
+  top: 35px;
+  left: 0%;
+  width: 100%;
+  transform: translate(-1%, 42%);
+}
+.stored-pass .st-head {
+  color: #ffffff;
+  z-index: 10;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  left: 0%;
+  width: 100%;
+  transform: translate(-1%, 42%);
+}
+.stored-pass .stored {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: "";
+  flex-direction: column;
+  background-color: #000066;
+  width: 450px;
+  height: 420px;
+  overflow-x: auto;
+}
+.stored-pass .stored .stored-list {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stored-pass .stored .stored-list .saved-info {
+  width: 250px;
+  display: flex;
+  padding: 10px;
+  color: #000000;
+  flex-direction: column;
+  gap: 10px;
+}
+.stored-pass .stored .stored-list .saved-info .hide-pass {
+  font-size: 10px;
+}
+.stored-pass .stored .stored-list .saved-info .show-pass {
+  font-size: 15px;
+  display: none;
+}
+.stored-pass .stored .stored-list .saved-info.show .hide-pass {
+  display: none;
+}
+.stored-pass .stored .stored-list .saved-info.show .show-pass {
+  display: block;
+}
+.stored-pass .stored .stored-list .hide-show {
+  font-size: 20px;
+  padding: 5px;
+}
+.stored-pass .stored .stored-list .hide-show .fa-eye-slash {
+  display: none;
+}
+.stored-pass .stored .stored-list .hide-show.show .fa-eye {
+  display: none;
+}
+.stored-pass .stored .stored-list .hide-show.show .fa-eye-slash {
+  display: block;
+}
+.stored-pass .stored .stored-list .modify-cent {
+  width: 100px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* media screen */
+@media only screen and (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=styles.css.map */

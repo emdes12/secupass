@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecuPass - No. 1 Online Manager</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/stlyes/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div
+        class="logo"
+        style="display: flex; align-items: flex-end; justify-content: center"
+      >
+        <span class="red-logo">Secu</span>
+        <span class="blue-logo"> <i>Pass</i> </span>
+      </div>
+
+      <nav>
+        <ul class="link">
+          <a href="#" class="opened">
+            <li class="menu-link">Home</li>
+          </a>
+          <a href="#about" title="About SecuPass">
+            <li class="menu-link">About</li>
+          </a>
+          <a href="#contact" title="Contact SecuPass">
+            <li class="menu-link">Contact</li>
+          </a>
+          <a href="#view-demo" title="View Demo">
+            <li class="menu-link">Demo</li>
+          </a>
+        </ul>
+      </nav>
+
+      <div class="top-btns">
+        <button class="btn-red">LOGIN</button>
+        <button class="btn-blue">SIGNUP</button>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="view-demo" id="view-demo">
+        <div class="password-info">
+          <input type="text" value="Dc12@x&yuEuw" id="display-genpass" />
+          <i
+            class="fa fa-clone"
+            onclick="copyPassword()"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="fa fa-refresh"
+            aria-hidden="true"
+            onclick="reloadPass()"
+          ></i>
+        </div>
+
+        <div class="custome-bar">
+          <h3>Customize your password</h3>
+
+          <div class="inputpart">
+            <input
+              type="number"
+              class="inp-num"
+              value="12"
+              max-length="2"
+              resizable
+              min="4"
+              max="20"
+              name="passlength"
+            />
+
+            <input
+              type="range"
+              class="inp-range"
+              min="4"
+              max="20"
+              value="12"
+              name="passlength"
+            />
+          </div>
+
+          <div class="charact-set">
+            <label for="sm-letter">
+              <input type="checkbox" name="sm-letter" id="sm-letter" checked />
+              Lowercase
+            </label>
+            <label for="up-letter">
+              <input type="checkbox" name="up-letter" id="up-letter" checked />
+              Uppercase
+            </label>
+            <label for="number">
+              <input type="checkbox" name="number" id="number" checked />
+              Numbers
+            </label>
+            <label for="symbols">
+              <input type="checkbox" name="symbols" id="symbols" checked />
+              Symbols
+            </label>
+          </div>
+        </div>
+
+        <div class="top-btns">
+          <button class="btn-red" onclick="copyPassword()">
+            COPY PASSWORD
+          </button>
+          <button class="btn-blue" onclick="showStoreForm()">
+            STORE PASSWORD
+          </button>
+        </div>
+      </div>
+
+      <div class="banners">
+        <div class="banner ca-text show">
+          <!-- <img src="/images/eye.gif" alt="eye" /> -->
+          <h2>Generate a secures password</h2>
+          <div class="line"></div>
+          <p>
+            Use our <b>OPG</b> - <i>Online Password Generator</i> to create a
+            secured, random <br />
+            and instant password.
+          </p>
+        </div>
+        <div class="banner ads">
+          <img src="/images/ads-secure.gif" alt="secure gif" />
+        </div>
+      </div>
+    </div>
+
+    <div class="store-password">
+      <div
+        class="close-form"
+        onclick="closeForm()"
+        title="you can use the esc key"
+      >
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+
+      <div class="store-form">
+        <label for="webname"
+          >Website Name:
+          <input
+            type="text"
+            class="webname-fill"
+            name="webname"
+            placeholder="secupass"
+          />
+        </label>
+        <br />
+        <label for="username"
+          >Username:
+          <input
+            type="text"
+            class="username-fill"
+            name="username"
+            placeholder="ogbaddest"
+          />
+        </label>
+        <br />
+        <label for="password"
+          >Password:
+          <input type="text" name="password" class="store-show-pass" disabled />
+        </label>
+        <br />
+        <button onclick="submitToPass()">STORE NOW</button>
+      </div>
+    </div>
+
+    <div class="stored-pass">
+      <span>YOUR PASSWORDS</span>
+      <h3 class="st-head">Your Passwords</h3>
+      <ul class="stored">
+        <li class="stored-list">
+          <div class="saved-info">
+            <h3>Facebook</h3>
+            <p class="hide-pass">
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+            </p>
+            <p class="show-pass">D*1l0vak</p>
+          </div>
+
+          <div
+            class="hide-show"
+            onclick="hideShow(this)"
+            title="show/hide password"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+          </div>
+
+          <div class="modify-cent">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i
+              class="fa fa-clone"
+              onclick="copySavePass('D*1l0vak')"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </li>
+
+        <li class="stored-list">
+          <div class="saved-info">
+            <h3>Twitter</h3>
+            <p class="hide-pass">
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+            </p>
+            <p class="show-pass">D*1l0vak</p>
+          </div>
+
+          <div
+            class="hide-show"
+            onclick="hideShow(this)"
+            title="show/hide password"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+          </div>
+
+          <div class="modify-cent">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i
+              class="fa fa-clone"
+              onclick="copySavePass('D*1l0vak')"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </li>
+
+        <li class="stored-list">
+          <div class="saved-info">
+            <h3>Github</h3>
+            <p class="hide-pass">
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+              <i class="fa fa-circle" aria-hidden="true"></i>
+            </p>
+            <p class="show-pass">D*1l0vak</p>
+          </div>
+
+          <div
+            class="hide-show"
+            onclick="hideShow(this)"
+            title="show/hide password"
+          >
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            <i class="fa fa-eye-slash" aria-hidden="true"></i>
+          </div>
+
+          <div class="modify-cent">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i
+              class="fa fa-clone"
+              onclick="copySavePass('D*1l0vak')"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

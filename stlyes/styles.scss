@@ -161,7 +161,7 @@ header {
       }
 
       .rencop {
-        max-width: 70px;
+        width: 50px;
         @include flex(center, space-between);
       }
     }

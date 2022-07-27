@@ -142,7 +142,7 @@ header nav ul a:hover, header nav ul a:hover {
   font-size: inherit;
 }
 .main .view-demo .password-info .rencop {
-  max-width: 70px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;

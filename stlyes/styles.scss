@@ -151,13 +151,18 @@ header {
       border-bottom: 5px solid $dip_blue;
       @include flex(center, space-between);
       font-size: 25px;
-      gap: 9px;
 
       #display-genpass {
         font-weight: bold;
-        // width: 380px;
+        // max-width: 200px;
+        flex: 1;
         border: none;
         font-size: inherit;
+      }
+
+      .rencop {
+        max-width: 70px;
+        @include flex(center, space-between);
       }
     }
 

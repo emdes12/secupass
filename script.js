@@ -184,6 +184,7 @@ getNStore();
 //assign storeShop to display
 function passPass() {
   storedPassDisp.innerHTML = "";
+  const storeContainer = document.querySelector('.stored-pass')
 
   for (let i = 0; i < storeShop.length; i++) {
     let hiddenCircle = '<i class="fa fa-circle" aria-hidden="true"></i>';
@@ -222,6 +223,10 @@ function passPass() {
   ></i>
 </div>
 </li>`;
+  }
+
+  if (storeShop.length === 0) {
+    storeContainer.setAttribute('height', '0')
   }
 }
 

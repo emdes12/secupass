@@ -466,7 +466,7 @@ header nav ul a:hover, header nav ul a:hover {
     transform: scale(0.8);
   }
 }
-@media (max-width: 350) {
+@media (max-width: 350px) {
   .view-demo {
     transform: scale(0);
   }

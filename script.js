@@ -214,8 +214,8 @@ function passPass() {
 </div>
 
 <div class="modify-cent">
-  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-  <i class="fa fa-trash" aria-hidden="true"></i>
+  <i class="fa fa-pencil-square-o" onclick="editPass(this, '${storeShop[i].password}')" aria-hidden="true"></i>
+  <i class="fa fa-trash" onclick="deleteSaved(this, '${storeShop[i].password}')" aria-hidden="true"></i>
   <i
     class="fa fa-clone"
     onclick="copySavePass('${storeShop[i].password}')"
@@ -227,6 +227,8 @@ function passPass() {
 
   if (storeShop.length === 0) {
     storeContainer.setAttribute("style", "display: none;");
+  } else {
+    storeContainer.setAttribute("style", "display: flex;");
   }
 }
 
@@ -247,4 +249,48 @@ function hideShow(e) {
 function copySavePass(pass) {
   /* Copy text into clipboard */
   navigator.clipboard.writeText(pass);
+}
+
+//deleting saved password
+function deleteSaved(e, saveePas) {
+  e.parentElement.parentElement.remove();
+
+  // console.log(storeShop.indexOf(e.parentElement.parentElement));
+  // console.log(storeShop);
+
+  for (let i = 0; i < storeShop.length; i++) {
+    if (storeShop[i].password === saveePas) {
+      storeShop.splice(i, 1);
+      // console.log(storeShop[i].password);
+      // console.log(storeShop.splice(i, 1));
+      // console.log(i);
+    }
+  }
+
+  //   storing to local storage
+  localStorage.setItem("store shop", JSON.stringify(storeShop));
+  getNStore();
+}
+
+//editing saved password
+function editPass(e, saveePas) {
+  // e.parentElement.parentElement.remove();
+
+  for (let i = 0; i < storeShop.length; i++) {
+    if (storeShop[i].password === saveePas) {
+      // console.log(storeShop[i].password);
+      // console.log(storeShop.splice(i, 1));
+      // console.log(i);
+      fillWebName.value = storeShop[i].name;
+      fillUserName.value = storeShop[i].username;
+      storePassShow.value = storeShop[i].password;
+      storeShop.splice(i, 1);
+    }
+  }
+
+  //   storing to local storage
+  localStorage.setItem("store shop", JSON.stringify(storeShop));
+  getNStore();
+
+  showStoreForm();
 }

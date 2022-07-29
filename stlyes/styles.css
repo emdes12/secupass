@@ -327,6 +327,15 @@ header nav ul a:hover, header nav ul a:hover {
   top: 50px;
   right: 50px;
 }
+.store-password label {
+  position: relative;
+}
+.store-password label i {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  transform: scale(1.3);
+}
 
 /* styled stored pass */
 .stored-pass {
@@ -453,6 +462,11 @@ header nav ul a:hover, header nav ul a:hover {
   }
 }
 @media (max-width: 400px) {
+  .view-demo {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 350) {
   .view-demo {
     transform: scale(0.8);
   }

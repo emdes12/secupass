@@ -17,6 +17,7 @@ const hideShowBtn = document.querySelector(".hide-show");
 const fillWebName = document.querySelector(".webname-fill");
 const fillUserName = document.querySelector(".username-fill");
 const storedPassDisp = document.querySelector(".stored");
+const storeContainer = document.querySelector(".stored-pass");
 
 // general variables
 let storeShop = [];
@@ -184,7 +185,6 @@ getNStore();
 //assign storeShop to display
 function passPass() {
   storedPassDisp.innerHTML = "";
-  const storeContainer = document.querySelector('.stored-pass')
 
   for (let i = 0; i < storeShop.length; i++) {
     let hiddenCircle = '<i class="fa fa-circle" aria-hidden="true"></i>';
@@ -226,7 +226,7 @@ function passPass() {
   }
 
   if (storeShop.length === 0) {
-    storeContainer.setAttribute('height', '0')
+    storeContainer.setAttribute("style", "display: none;");
   }
 }
 

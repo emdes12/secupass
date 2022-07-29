@@ -75,13 +75,15 @@ header {
   nav {
     ul {
       list-style-type: none;
+      margin: 0;
+      padding: 0;
       @include flex(center, space-between);
 
       a {
         text-decoration: none;
         color: $light_blue_color;
         transition: all 1s ease;
-        @include paddings(17px, 13.6px, 17px, 13.6px);
+        @include paddings(17px, 12px, 17px, 12px);
 
         &.opened {
           border-top: 2px solid $dip_blue;
@@ -117,6 +119,7 @@ header {
   grid-template-columns: 1fr 1fr;
   padding: 10px;
   width: 100%;
+  height: calc(100vh - 100px);
   gap: 70.5px;
 
   .view-demo,
@@ -350,6 +353,7 @@ header {
   @include flex(center, center);
   width: 100%;
   height: 600px;
+  overflow: hidden;
   padding: 30px;
   background-color: $light_blue_color;
   position: relative;
@@ -461,5 +465,26 @@ header {
 @media only screen and (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  header {
+    padding: 30px;
+
+    nav {
+      background-color: $white_color;
+
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .view-demo {
+    transform: scale(0.8);
   }
 }

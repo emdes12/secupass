@@ -451,7 +451,7 @@ header nav ul a:hover, header nav ul a:hover {
 }
 @media (max-width: 760px) {
   header {
-    padding: 30px;
+    padding: 20px;
   }
   header nav {
     background-color: #ffffff;
@@ -468,6 +468,6 @@ header nav ul a:hover, header nav ul a:hover {
 }
 @media (max-width: 350) {
   .view-demo {
-    transform: scale(0.8);
+    transform: scale(0.6);
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -459,6 +459,6 @@ header nav ul a:hover, header nav ul a:hover {
 }
 @media (max-width: 400px) {
   .view-demo {
-    transform: scale(0.6);
+    transform: scale(0);
   }
 }/*# sourceMappingURL=styles.css.map */

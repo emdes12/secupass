@@ -112,6 +112,36 @@ header {
   @include flex(center, center);
 }
 
+.banner.ca-text {
+  // background-color: $red_color;
+  // flex: 1;
+  text-align: center;
+  // box-shadow: -10px 10px 25px -10px $black_color;
+
+  img {
+    width: 150px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    padding-bottom: 30px;
+    font-size: 30px;
+    color: $red_color;
+  }
+
+  .line {
+    margin-bottom: 20px;
+    border: 0.7px solid $black_color;
+    width: 100%;
+    content: "";
+  }
+
+  p {
+    font-size: 18px;
+    color: $dip_blue;
+  }
+}
+
 .main {
   display: grid;
   justify-items: center;
@@ -119,7 +149,6 @@ header {
   grid-template-columns: 1fr 1fr;
   padding: 10px;
   width: 100%;
-  height: calc(100vh - 100px);
   gap: 70.5px;
 
   .view-demo,
@@ -246,43 +275,8 @@ header {
   }
 
   .banner {
-    display: none;
     transition: all 2s ease;
     padding: 10px;
-  }
-
-  .banner.show {
-    display: block;
-  }
-
-  .banner.ca-text {
-    // background-color: $red_color;
-    // flex: 1;
-    text-align: center;
-    // box-shadow: -10px 10px 25px -10px $black_color;
-
-    img {
-      width: 150px;
-      padding-bottom: 20px;
-    }
-
-    h2 {
-      padding-bottom: 30px;
-      font-size: 30px;
-      color: $red_color;
-    }
-
-    .line {
-      margin-bottom: 20px;
-      border: 0.7px solid $black_color;
-      width: 100%;
-      content: "";
-    }
-
-    p {
-      font-size: 18px;
-      color: $dip_blue;
-    }
   }
 
   // .banner.ads {

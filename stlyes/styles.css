@@ -93,6 +93,29 @@ header nav ul a:hover, header nav ul a:hover {
   color: #ffffff;
 }
 
+.banner.ca-text {
+  text-align: center;
+}
+.banner.ca-text img {
+  width: 150px;
+  padding-bottom: 20px;
+}
+.banner.ca-text h2 {
+  padding-bottom: 30px;
+  font-size: 30px;
+  color: #ff0000;
+}
+.banner.ca-text .line {
+  margin-bottom: 20px;
+  border: 0.7px solid #000000;
+  width: 100%;
+  content: "";
+}
+.banner.ca-text p {
+  font-size: 18px;
+  color: #000066;
+}
+
 .main {
   display: grid;
   justify-items: center;
@@ -100,7 +123,6 @@ header nav ul a:hover, header nav ul a:hover {
   grid-template-columns: 1fr 1fr;
   padding: 10px;
   width: 100%;
-  height: calc(100vh - 100px);
   gap: 70.5px;
 }
 .main .view-demo,
@@ -221,34 +243,8 @@ header nav ul a:hover, header nav ul a:hover {
   padding: 0px 20px 0px 35px;
 }
 .main .banner {
-  display: none;
   transition: all 2s ease;
   padding: 10px;
-}
-.main .banner.show {
-  display: block;
-}
-.main .banner.ca-text {
-  text-align: center;
-}
-.main .banner.ca-text img {
-  width: 150px;
-  padding-bottom: 20px;
-}
-.main .banner.ca-text h2 {
-  padding-bottom: 30px;
-  font-size: 30px;
-  color: #ff0000;
-}
-.main .banner.ca-text .line {
-  margin-bottom: 20px;
-  border: 0.7px solid #000000;
-  width: 100%;
-  content: "";
-}
-.main .banner.ca-text p {
-  font-size: 18px;
-  color: #000066;
 }
 
 .fa {
